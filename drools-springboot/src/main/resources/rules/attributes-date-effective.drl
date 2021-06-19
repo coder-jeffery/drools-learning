@@ -1,0 +1,16 @@
+package rules
+import com.mashibing.drools.entity.AttributesDateEffectiveEntity
+
+/*
+ 用于测试Drools 属性: date-effective
+*/
+
+rule "rule_attributes_date_effective"
+//    date-effective "20-七月-2021"
+//    date-effective "2021-02-20"
+    when
+        $attributesDateEffectiveEntity:AttributesDateEffectiveEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_date_effective 触发");
+end
+

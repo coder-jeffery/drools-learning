@@ -1,0 +1,15 @@
+package rules
+import com.mashibing.drools.entity.AttributesDateExpiresEntity
+
+/*
+ 用于测试Drools 属性: date-expires
+*/
+
+rule "rule_attributes_date_expires"
+//    date-expires "2021-06-20"
+    when
+        $attributesDateExpiresEntity:AttributesDateExpiresEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_date_expires 触发");
+end
+

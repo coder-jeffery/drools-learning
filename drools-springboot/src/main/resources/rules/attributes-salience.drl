@@ -1,0 +1,30 @@
+package rules
+import com.mashibing.drools.entity.AttributesSalienceEntity
+
+/*
+ 用于测试Drools 属性:salience
+*/
+
+rule "rule_attributes_salience_1"
+    salience 10
+    when
+        AttributesSalienceEntity(flag == true)
+    then
+        System.out.println("规则 rule_attributes_salience_1 触发");
+end
+
+rule "rule_attributes_salience_2"
+//    salience 20
+    when
+        AttributesSalienceEntity(flag == true)
+    then
+        System.out.println("规则 rule_attributes_salience_2 触发");
+end
+
+rule "rule_attributes_salience_3"
+    salience 1
+    when
+        AttributesSalienceEntity(flag == true)
+    then
+        System.out.println("规则 rule_attributes_salience_3 触发");
+end

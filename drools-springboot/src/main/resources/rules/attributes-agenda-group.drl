@@ -1,0 +1,39 @@
+package rules
+import com.mashibing.drools.entity.AttributesAgendaGroupEntity
+
+/*
+ 用于测试Drools 属性: agenda-group
+*/
+
+rule "rule_attributes_agenda_group_1"
+    agenda-group "customAgendaGroup1"
+    when
+        $attributesAgendaGroupEntity:AttributesAgendaGroupEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_agenda_group_1 触发");
+end
+
+rule "rule_attributes_agenda_group_2"
+    agenda-group "customAgendaGroup1"
+    when
+        $attributesAgendaGroupEntity:AttributesAgendaGroupEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_agenda_group_2 触发");
+end
+
+
+rule "rule_attributes_activation_group_3"
+    agenda-group "customAgendaGroup2"
+    when
+        $attributesAgendaGroupEntity:AttributesAgendaGroupEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_activation_group_3 触发");
+end
+
+rule "rule_attributes_agenda_group_4"
+    agenda-group "customAgendaGroup2"
+    when
+        $attributesAgendaGroupEntity:AttributesAgendaGroupEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_agenda_group_4 触发");
+end

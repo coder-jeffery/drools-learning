@@ -1,0 +1,15 @@
+package rules
+import com.mashibing.drools.entity.AttributesEnabledEntity
+
+/*
+ 用于测试Drools 属性:enabled
+*/
+
+//测试enabled
+rule "rule_attributes_enabled"
+    enabled false
+    when
+        AttributesEnabledEntity(num > 10)
+    then
+        System.out.println("规则rule_attributes_enabled触发");
+end

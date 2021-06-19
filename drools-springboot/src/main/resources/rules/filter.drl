@@ -1,0 +1,20 @@
+package rules
+import com.mashibing.drools.entity.FilterEntity
+
+/*
+ 用于测试Drools filter
+*/
+
+rule "rule_filter_1"
+    when
+        FilterEntity(num > 10)
+    then
+        System.out.println("规则 rule_filter_1 触发");
+end
+
+rule "rule_filter_2"
+    when
+        FilterEntity(num > 20)
+    then
+        System.out.println("规则 rule_filter_2 触发");
+end

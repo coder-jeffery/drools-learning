@@ -1,0 +1,15 @@
+package rules
+import com.mashibing.drools.entity.AttributesNoLoopEntity
+
+/*
+ 用于测试Drools 属性:no-loop
+*/
+
+rule "rule_attributes_noloop"
+    no-loop true
+    when
+        $attributesNoLoopEntity:AttributesNoLoopEntity(num > 1)
+    then
+        update($attributesNoLoopEntity)
+        System.out.println("规则 rule_attributes_noloop 触发");
+end

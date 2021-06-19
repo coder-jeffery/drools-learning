@@ -1,0 +1,7 @@
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
+#  level:
+#    root: debug
+#  level.com.lzxuni: debug
+  #  level.org.apache.shiro: debug

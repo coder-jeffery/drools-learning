@@ -1,0 +1,22 @@
+package rules
+import com.mashibing.drools.entity.AttributesTimerEntity
+
+/*
+ 用于测试Drools 属性: timer
+*/
+
+rule "rule_attributes_timer_1"
+    timer(5s 2s)
+    when
+        $attributesTimerEntity:AttributesTimerEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_timer_1 触发");
+end
+
+rule "rule_attributes_timer_2"
+    timer(cron:0/1 * * * * ?)
+    when
+        $attributesTimerEntity:AttributesTimerEntity(num > 1)
+    then
+        System.out.println("规则 rule_attributes_timer_2 触发");
+end

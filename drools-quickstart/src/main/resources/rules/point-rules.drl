@@ -1,0 +1,51 @@
+package rules
+
+import com.mashibing.drools.quickstart.entity.Order
+import com.mashibing.drools.quickstart.entity.User
+
+rule "zero"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $order : Order(price <= 100)
+    then
+        $order.setScore(0);
+        update($order);
+end
+
+rule "add100"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $order : Order(price > 100 && price <= 500)
+//        and $user : User(level>3)
+    then
+        System.out.println($order.getUser());
+        $order.setScore(100);
+        update($order);
+end
+
+
+rule "add500"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $order : Order(price > 500 && price <= 1000)
+    then
+        $order.setScore(500);
+        update($order);
+end
+
+rule "add1000"
+    no-loop true
+    lock-on-active true
+    salience 1
+    when
+        $order : Order(price > 1000)
+    then
+        $order.setScore(1000);
+        update($order);
+end
