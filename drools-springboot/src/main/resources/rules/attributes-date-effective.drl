@@ -6,7 +6,7 @@ import com.mashibing.drools.entity.AttributesDateEffectiveEntity
 */
 
 rule "rule_attributes_date_effective"
-//    date-effective "20-七月-2021"
+//    date-effective "20-七月-2020"
 //    date-effective "2021-02-20"
     when
         $attributesDateEffectiveEntity:AttributesDateEffectiveEntity(num > 1)

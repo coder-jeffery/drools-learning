@@ -23,7 +23,7 @@ end
 
 rule "rule_attributes_auto_focus_3"
     agenda-group "customAgendaGroup2"
-//    auto-focus true
+    auto-focus true
     when
         $attributesAutoFocusEntity:AttributesAutoFocusEntity(num > 1)
     then

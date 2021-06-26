@@ -1,0 +1,23 @@
+package rules
+import com.mashibing.drools.entity.LhsExistsEntity
+
+/*
+ 用于测试Drools LHS: exists
+*/
+
+
+rule "lhs_exists_1"
+    when
+       exists $lhsExistsEntity:LhsExistsEntity(age > 10)
+    then
+        System.out.println("规则 lhs_exists_1 触发");
+end
+
+
+rule "lhs_exists_2"
+    when
+       $lhsExistsEntity:LhsExistsEntity(age > 10)
+    then
+       System.out.println("规则 lhs_exists_2 触发");
+end
+

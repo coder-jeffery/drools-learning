@@ -1,0 +1,20 @@
+package rules
+import com.mashibing.drools.entity.LhsExtendsEntity
+
+/*
+ 用于测试Drools LHS: extends
+*/
+rule "lhs_extends_1"
+    when
+       $lhsExtendsEntity:LhsExtendsEntity(age > 10)
+    then
+       System.out.println("规则 lhs_extends_1 触发");
+end
+
+rule "lhs_extends_2" extends "lhs_extends_1"
+    when
+       LhsExtendsEntity(age < 20)
+    then
+       System.out.println("规则 lhs_extends_2 触发");
+end
+

@@ -1,0 +1,36 @@
+package rules
+import com.mashibing.drools.entity.RhsInsertEntity
+
+/*
+ 用于测试Drools RHS: insert
+*/
+
+
+rule "rhs_insert_1"
+    when
+        $rhsInsertEntity:RhsInsertEntity(age <= 10)
+    then
+        RhsInsertEntity rhsInsertEntity = new RhsInsertEntity();
+        rhsInsertEntity.setAge(15);
+        insert(rhsInsertEntity);
+        System.out.println("规则 rhs_insert_1 触发");
+end
+
+rule "rhs_insert_2"
+    when
+        $rhsInsertEntity:RhsInsertEntity(age <=20 && age>10)
+    then
+        RhsInsertEntity rhsInsertEntity = new RhsInsertEntity();
+        rhsInsertEntity.setAge(25);
+        insert(rhsInsertEntity);
+        System.out.println("规则 rhs_insert_2 触发");
+end
+
+rule "rhs_insert_3"
+    when
+        $rhsInsertEntity:RhsInsertEntity(age > 20 )
+    then
+        System.out.println("规则 rhs_insert_3 触发");
+end
+
+

@@ -1,0 +1,14 @@
+package rules
+import com.mashibing.drools.entity.LhsEvalEntity
+
+/*
+ 用于测试Drools LHS: eval
+*/
+
+
+rule "lhs_eval"
+    when
+        $lhsInEntity:LhsEvalEntity(age > 10) and eval(2>1)
+    then
+        System.out.println("规则 lhs_eval 触发");
+end

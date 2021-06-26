@@ -1,0 +1,16 @@
+package rules
+import com.mashibing.drools.entity.QueryEntity
+
+/*
+ 用于测试Drools 方法: query
+*/
+
+//无参查询
+query "query_1"
+    $queryEntity:QueryEntity(age>20)
+end
+
+//有参查询
+query "query_2"(Integer qAge,String qName)
+    $queryEntity:QueryEntity(age > qAge && name == qName)
+end

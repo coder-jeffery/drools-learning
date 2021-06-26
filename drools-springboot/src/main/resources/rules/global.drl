@@ -1,0 +1,33 @@
+package rules
+import com.mashibing.drools.entity.GlobalEntity
+
+/*
+ 用于测试Drools 属性: global
+*/
+
+global java.lang.Integer globalCount
+global java.util.List globalList
+
+rule "rule_global_1"
+    when
+        $globalEntity:GlobalEntity(num > 1)
+    then
+        System.out.println("规则 rule_global_1 开始...");
+        globalCount++ ;
+        globalList.add("张三");
+        globalList.add("李四");
+
+        System.out.println(globalCount);
+        System.out.println(globalList);
+        System.out.println("规则 rule_global_1 结束...");
+end
+
+rule "rule_global_2"
+    when
+        $globalEntity:GlobalEntity(num > 1)
+    then
+        System.out.println("规则 rule_global_2 开始...");
+        System.out.println(globalCount);
+        System.out.println(globalList);
+        System.out.println("规则 rule_global_2 结束...");
+end

@@ -1,0 +1,22 @@
+package rules
+import com.mashibing.drools.entity.RhsHaftEntity
+
+/*
+ 用于测试Drools RHS: haft
+*/
+
+
+rule "rhs_haft_1"
+    when
+        $rhsHaftEntity:RhsHaftEntity(age <= 10)
+    then
+        drools.halt();
+        System.out.println("规则 rhs_haft_1 触发");
+end
+
+rule "rhs_haft_2"
+    when
+        $rhsHaftEntity:RhsHaftEntity(age <= 20)
+    then
+        System.out.println("规则 rhs_haft_2 触发");
+end

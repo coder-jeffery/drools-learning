@@ -1,0 +1,25 @@
+package rules
+import com.mashibing.drools.entity.AttributesLockOnActiveEntity
+
+/*
+ 用于测试Drools 属性:lock-on-active
+*/
+
+rule "rule_attributes_lock_on_active_1"
+    no-loop true
+    when
+        $attributesLockOnActiveEntity:AttributesLockOnActiveEntity(num > 1)
+    then
+        update($attributesLockOnActiveEntity)
+        System.out.println("规则 rule_attributes_lock_on_active_1 触发");
+end
+
+rule "rule_attributes_lock_on_active_2"
+    no-loop true
+    lock-on-active true
+    when
+        $attributesLockOnActiveEntity:AttributesLockOnActiveEntity(num > 1)
+    then
+        update($attributesLockOnActiveEntity)
+        System.out.println("规则 rule_attributes_lock_on_active_2 触发");
+end

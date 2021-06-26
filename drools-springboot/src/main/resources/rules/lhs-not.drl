@@ -1,0 +1,15 @@
+package rules
+import com.mashibing.drools.entity.LhsNotEntity
+
+/*
+ 用于测试Drools LHS: not
+*/
+
+
+//rule "lhs_not"
+//    when
+//       not $lhsNotEntity:LhsNotEntity(age > 10)
+//    then
+//       System.out.println("规则 lhs_not 触发");
+//end
+

@@ -14,7 +14,7 @@ rule "rule_attributes_salience_1"
 end
 
 rule "rule_attributes_salience_2"
-//    salience 20
+    salience 20
     when
         AttributesSalienceEntity(flag == true)
     then

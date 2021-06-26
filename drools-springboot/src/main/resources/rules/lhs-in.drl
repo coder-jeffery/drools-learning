@@ -1,0 +1,21 @@
+package rules
+import com.mashibing.drools.entity.LhsInEntity
+
+/*
+ 用于测试Drools LHS: in not in
+*/
+
+
+rule "lhs_in"
+    when
+        $lhsInEntity:LhsInEntity(name in ("张三","李四","王五"))
+    then
+        System.out.println("规则 lhs_in 触发");
+end
+
+rule "lhs_not_in"
+    when
+        $lhsInEntity:LhsInEntity(name not in ("张三","李四","王五"))
+    then
+        System.out.println("规则 lhs_not_in 触发");
+end

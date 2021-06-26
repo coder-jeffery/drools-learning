@@ -9,6 +9,7 @@ import java.util.HashMap;
 
  * @date 2016年10月27日 下午9:59:27
  */
+@SuppressWarnings("AlibabaClassNamingShouldBeCamel")
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 

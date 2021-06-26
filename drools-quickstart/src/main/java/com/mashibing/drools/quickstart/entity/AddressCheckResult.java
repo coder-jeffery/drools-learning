@@ -10,5 +10,9 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class AddressCheckResult {
-    private boolean postCodeResult = false; // true:通过校验；false：未通过校验
+
+    /**
+     * true:通过校验；false：未通过校验
+     */
+    private boolean postCodeResult = false;
 }

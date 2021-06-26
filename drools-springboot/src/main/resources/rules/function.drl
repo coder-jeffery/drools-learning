@@ -1,0 +1,19 @@
+package rules
+import com.mashibing.drools.entity.FunctionEntity
+
+/*
+ 用于测试Drools 方法: function
+*/
+
+//定义一个 加法 方法
+function Integer add(Integer num){
+    return num+10;
+}
+
+rule "function"
+    when
+        $functionEntity:FunctionEntity(num>20)
+    then
+        Integer result = add($functionEntity.getNum());
+        System.out.println(result);
+end
